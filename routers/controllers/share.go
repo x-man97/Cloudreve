@@ -92,7 +92,7 @@ func GetShareDownload(c *gin.Context) {
 // PreviewShare 预览分享文件内容
 func PreviewShare(c *gin.Context) {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	var service share.Service
@@ -115,7 +115,7 @@ func PreviewShare(c *gin.Context) {
 // PreviewShareText 预览文本文件
 func PreviewShareText(c *gin.Context) {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	var service share.Service
@@ -133,7 +133,7 @@ func PreviewShareText(c *gin.Context) {
 // PreviewShareReadme 预览文本自述文件
 func PreviewShareReadme(c *gin.Context) {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	var service share.Service

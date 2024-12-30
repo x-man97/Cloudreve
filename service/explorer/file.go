@@ -57,7 +57,7 @@ func (service *SingleFileService) Create(c *gin.Context) serializer.Response {
 	defer fs.Recycle()
 
 	// 上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	// 给文件系统分配钩子
@@ -407,7 +407,7 @@ func (service *FileIDService) PreviewContent(ctx context.Context, c *gin.Context
 // PutContent 更新文件内容
 func (service *FileIDService) PutContent(ctx context.Context, c *gin.Context) serializer.Response {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	// 取得文件大小

@@ -15,7 +15,7 @@ import (
 // SlaveUpload 从机文件上传
 func SlaveUpload(c *gin.Context) {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	var service explorer.UploadService
@@ -31,7 +31,7 @@ func SlaveUpload(c *gin.Context) {
 // SlaveGetUploadSession 从机创建上传会话
 func SlaveGetUploadSession(c *gin.Context) {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	var service explorer.SlaveCreateUploadSessionService
@@ -46,7 +46,7 @@ func SlaveGetUploadSession(c *gin.Context) {
 // SlaveDeleteUploadSession 从机删除上传会话
 func SlaveDeleteUploadSession(c *gin.Context) {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	var service explorer.UploadSessionService
@@ -61,7 +61,7 @@ func SlaveDeleteUploadSession(c *gin.Context) {
 // SlaveDownload 从机文件下载,此请求返回的HTTP状态码不全为200
 func SlaveDownload(c *gin.Context) {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	var service explorer.SlaveDownloadService
@@ -78,7 +78,7 @@ func SlaveDownload(c *gin.Context) {
 // SlavePreview 从机文件预览
 func SlavePreview(c *gin.Context) {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	var service explorer.SlaveDownloadService
@@ -95,7 +95,7 @@ func SlavePreview(c *gin.Context) {
 // SlaveThumb 从机文件缩略图
 func SlaveThumb(c *gin.Context) {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	var service explorer.SlaveFileService
@@ -112,7 +112,7 @@ func SlaveThumb(c *gin.Context) {
 // SlaveDelete 从机删除
 func SlaveDelete(c *gin.Context) {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	var service explorer.SlaveFilesService

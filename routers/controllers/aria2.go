@@ -34,7 +34,7 @@ func SelectAria2File(c *gin.Context) {
 // AddAria2Torrent 添加离线下载种子
 func AddAria2Torrent(c *gin.Context) {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	var service explorer.FileIDService

@@ -245,7 +245,7 @@ func (service *Service) List(c *gin.Context) serializer.Response {
 	defer fs.Recycle()
 
 	// 上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	// 重设根目录
@@ -393,7 +393,7 @@ func (service *SearchService) Search(c *gin.Context) serializer.Response {
 	defer fs.Recycle()
 
 	// 上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	// 重设根目录

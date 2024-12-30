@@ -23,7 +23,7 @@ func (service *DirectoryService) ListDirectory(c *gin.Context) serializer.Respon
 	defer fs.Recycle()
 
 	// 上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	// 获取子项目
@@ -53,7 +53,7 @@ func (service *DirectoryService) CreateDirectory(c *gin.Context) serializer.Resp
 	defer fs.Recycle()
 
 	// 上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	// 创建目录

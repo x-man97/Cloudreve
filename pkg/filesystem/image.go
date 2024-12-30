@@ -113,7 +113,7 @@ func (pool *Pool) releaseWorker() {
 // generateThumbnail generates thumb for given file, upload the thumb file back with given suffix
 func (fs *FileSystem) generateThumbnail(ctx context.Context, file *model.File) error {
 	// 新建上下文
-	newCtx, cancel := context.WithCancel(context.Background())
+	newCtx, cancel := context.WithCancel(ctx)
 	defer cancel()
 	// TODO: check file size
 

@@ -15,7 +15,7 @@ import (
 
 func DownloadArchive(c *gin.Context) {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	var service explorer.ArchiveService
@@ -28,7 +28,7 @@ func DownloadArchive(c *gin.Context) {
 
 func Archive(c *gin.Context) {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	var service explorer.ItemIDService
@@ -65,7 +65,7 @@ func Decompress(c *gin.Context) {
 // AnonymousGetContent 匿名获取文件资源
 func AnonymousGetContent(c *gin.Context) {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	var service explorer.FileAnonymousGetService
@@ -82,7 +82,7 @@ func AnonymousGetContent(c *gin.Context) {
 // AnonymousPermLink Deprecated 文件签名后的永久链接
 func AnonymousPermLinkDeprecated(c *gin.Context) {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	var service explorer.FileAnonymousGetService
@@ -105,7 +105,7 @@ func AnonymousPermLinkDeprecated(c *gin.Context) {
 // AnonymousPermLink 文件中转后的永久直链接
 func AnonymousPermLink(c *gin.Context) {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	sourceLinkRaw, ok := c.Get("source_link")
@@ -137,7 +137,7 @@ func AnonymousPermLink(c *gin.Context) {
 
 func GetSource(c *gin.Context) {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	var service explorer.ItemIDService
@@ -152,7 +152,7 @@ func GetSource(c *gin.Context) {
 // Thumb 获取文件缩略图
 func Thumb(c *gin.Context) {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	fs, err := filesystem.NewFileSystemFromContext(c)
@@ -190,7 +190,7 @@ func Thumb(c *gin.Context) {
 // Preview 预览文件
 func Preview(c *gin.Context) {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	var service explorer.FileIDService
@@ -213,7 +213,7 @@ func Preview(c *gin.Context) {
 // PreviewText 预览文本文件
 func PreviewText(c *gin.Context) {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	var service explorer.FileIDService
@@ -231,7 +231,7 @@ func PreviewText(c *gin.Context) {
 // GetDocPreview 获取DOC文件预览地址
 func GetDocPreview(c *gin.Context) {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	var service explorer.FileIDService
@@ -246,7 +246,7 @@ func GetDocPreview(c *gin.Context) {
 // CreateDownloadSession 创建文件下载会话
 func CreateDownloadSession(c *gin.Context) {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	var service explorer.FileIDService
@@ -261,7 +261,7 @@ func CreateDownloadSession(c *gin.Context) {
 // Download 文件下载
 func Download(c *gin.Context) {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	var service explorer.DownloadService
@@ -278,7 +278,7 @@ func Download(c *gin.Context) {
 // PutContent 更新文件内容
 func PutContent(c *gin.Context) {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	var service explorer.FileIDService
@@ -293,7 +293,7 @@ func PutContent(c *gin.Context) {
 // FileUpload 本地策略文件上传
 func FileUpload(c *gin.Context) {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	var service explorer.UploadService
@@ -355,7 +355,7 @@ func FileUpload(c *gin.Context) {
 // DeleteUploadSession 删除上传会话
 func DeleteUploadSession(c *gin.Context) {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	var service explorer.UploadSessionService
@@ -370,7 +370,7 @@ func DeleteUploadSession(c *gin.Context) {
 // DeleteAllUploadSession 删除全部上传会话
 func DeleteAllUploadSession(c *gin.Context) {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	res := explorer.DeleteAllUploadSession(ctx, c)
@@ -380,7 +380,7 @@ func DeleteAllUploadSession(c *gin.Context) {
 // GetUploadSession 创建上传会话
 func GetUploadSession(c *gin.Context) {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	var service explorer.CreateUploadSessionService

@@ -69,7 +69,7 @@ func (service *ItemSearchService) Search(c *gin.Context) serializer.Response {
 // SearchKeywords 根据关键字搜索文件
 func (service *ItemSearchService) SearchKeywords(c *gin.Context, fs *filesystem.FileSystem, keywords ...interface{}) serializer.Response {
 	// 上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	// 获取子项目

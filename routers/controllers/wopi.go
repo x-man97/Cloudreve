@@ -35,7 +35,7 @@ func GetFile(c *gin.Context) {
 
 // PutFile Puts file content
 func PutFile(c *gin.Context) {
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	service := &explorer.FileIDService{}

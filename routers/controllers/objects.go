@@ -10,7 +10,7 @@ import (
 // Delete 删除文件或目录
 func Delete(c *gin.Context) {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	var service explorer.ItemIDService
@@ -25,7 +25,7 @@ func Delete(c *gin.Context) {
 // Move 移动文件或目录
 func Move(c *gin.Context) {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	var service explorer.ItemMoveService
@@ -40,7 +40,7 @@ func Move(c *gin.Context) {
 // Copy 复制文件或目录
 func Copy(c *gin.Context) {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	var service explorer.ItemMoveService
@@ -55,7 +55,7 @@ func Copy(c *gin.Context) {
 // Rename 重命名文件或目录
 func Rename(c *gin.Context) {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	var service explorer.ItemRenameService
@@ -70,7 +70,7 @@ func Rename(c *gin.Context) {
 // Rename 重命名文件或目录
 func GetProperty(c *gin.Context) {
 	// 创建上下文
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(c)
 	defer cancel()
 
 	var service explorer.ItemPropertyService
