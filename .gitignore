@@ -31,3 +31,4 @@ conf/conf.ini
 .vscode/
 
 dist/
+statics
