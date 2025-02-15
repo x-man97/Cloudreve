@@ -228,7 +228,7 @@ func InitMasterRouter() *gin.Engine {
 				// 文件外链(301跳转)
 				file.GET("source/:id/:name", controllers.AnonymousPermLinkDeprecated)
 				// 下载文件
-				file.GET("download/:id",
+				file.GET("download/:id/*name",
 					middleware.StaticResourceCache(),
 					controllers.Download,
 				)
@@ -620,7 +620,7 @@ func InitMasterRouter() *gin.Engine {
 				// 创建空白文件
 				file.POST("create", controllers.CreateFile)
 				// 创建文件下载会话
-				file.PUT("download/:id", controllers.CreateDownloadSession)
+				file.PUT("download/:id/*filename", controllers.CreateDownloadSession)
 				// 预览文件
 				file.GET("preview/:id", middleware.Sandbox(), controllers.Preview)
 				// 获取文本文件内容

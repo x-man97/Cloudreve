@@ -250,7 +250,7 @@ func (handler Driver) Source(ctx context.Context, path string, ttl int64, isDown
 		// 签名生成文件记录
 		signedURI, err = auth.SignURI(
 			auth.General,
-			fmt.Sprintf("/api/v3/file/download/%s", downloadSessionID),
+			fmt.Sprintf("/api/v3/file/download/%s/%s", downloadSessionID, file.Name),
 			ttl,
 		)
 	} else {
